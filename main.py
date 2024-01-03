@@ -17,7 +17,7 @@ import os
 from time import sleep
 import random
 
-cards = {
+CARDS = {
   "Ace": [11, 1],
   "One": 1,
   "Two": 2,
@@ -34,7 +34,7 @@ cards = {
   "King": 10
 }
 ##Variable declaration
-cards_key_list = list(cards)
+cards_key_list = list(CARDS)
 my_starting_hand = 2
 dealers_starting_hand = 1
 card_count = 0
@@ -130,12 +130,12 @@ def get_hand(hand):
   '''Add card to player or dealer's hand'''
   card = get_card()
   #An ace is worth 1 or 11, in favor of the one who draws it
-  if card == "Ace" and sum(hand) + cards["Ace"][0] < 21:
-    my_hand.append(cards["Ace"][0])
-  elif card == "Ace" and sum(hand) + cards["Ace"][0] > 21:
-    hand.append(cards["Ace"][1])
+  if card == "Ace" and sum(hand) + CARDS["Ace"][0] < 21:
+    my_hand.append(CARDS["Ace"][0])
+  elif card == "Ace" and sum(hand) + CARDS["Ace"][0] > 21:
+    hand.append(CARDS["Ace"][1])
   else:
-    hand.append(cards[card])
+    hand.append(CARDS[card])
 
 def draw_or_pass():
   continuation = ""
